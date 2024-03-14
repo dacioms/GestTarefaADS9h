@@ -9,7 +9,6 @@ def isDateValid(data):
 
 
 
-
 data = input('Informe a data de término da terefa: ')
 print(isDateValid(data))
 
