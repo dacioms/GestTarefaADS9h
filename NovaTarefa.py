@@ -13,9 +13,6 @@ def abrir_nova_janela(id = -1, nome = "", descricao = "", data = ""):
     if add_janela is not None and add_janela.winfo_exists():
         add_janela.lift()
     else:
-
-        print(data)
-
         def enviar():
             # if (id == -1):
                 # crud.create({ "nome": campo_nome.get(), "descricao": campo_descricao.get(), "data": campo_data.get_date(), "concluido": True })
