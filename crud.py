@@ -1,6 +1,6 @@
 import dados
 def create(nome, descricao, data):
-    tarefa = [{nome: nome, descricao: descricao, data: data}]
+    tarefa = [{"nome": nome, "descricao": descricao, "data": data}]
     #dados.escrever_csv(tarefa)
 
 
