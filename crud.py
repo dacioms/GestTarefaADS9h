@@ -18,5 +18,4 @@ def delete(id):
 
 def listar():
     tarefas = ler_csv()
-    for tarefa in tarefas:
-        print(tarefa)
+    return tarefas
