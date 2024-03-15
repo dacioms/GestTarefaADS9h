@@ -2,6 +2,7 @@ from tkinter import *
 from Utils import definirTamanhoTela
 from tkcalendar import DateEntry
 from locale import setlocale, LC_ALL
+import datetime
         
 add_janela = None
 
@@ -12,12 +13,11 @@ def abrir_nova_janela(id = -1, nome = "", descricao = "", data = ""):
     if add_janela is not None and add_janela.winfo_exists():
         add_janela.lift()
     else:
-
         def enviar():
             # if (id == -1):
-                # crud.create({ "nome": campo_nome.get(), "descricao": campo_descricao.get(), "data": data, "concluido": True })
+                # crud.create({ "nome": campo_nome.get(), "descricao": campo_descricao.get(), "data": campo_data.get_date(), "concluido": True })
             # else:
-                # crud.update({ "id": id, "nome": campo_nome.get(), "descricao": campo_descricao.get(), "data": data, "concluido": True })
+                # crud.update({ "id": id, "nome": campo_nome.get(), "descricao": campo_descricao.get(), "data": campo_data.get_date(), "concluido": True })
             
             nova_janela.destroy()
 
@@ -52,6 +52,8 @@ def abrir_nova_janela(id = -1, nome = "", descricao = "", data = ""):
         # Botão
         btnAddTarefa = Button(nova_janela, text="Enviar", bg="#6aa84f", bd=0, pady=8, padx=15, fg="white", font=("Arial", 10, "bold"), command=enviar)
         btnAddTarefa.pack(pady=10)
+
+        if (id != -1): campo_data.set_date(datetime.date(int(data[2]), int(data[1]), int(data[0])))
         
         definirTamanhoTela(nova_janela, 300, 400)
 

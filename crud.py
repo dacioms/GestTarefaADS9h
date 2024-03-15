@@ -1,7 +1,7 @@
 from dados import ler_csv, escrever_csv, remover_elemento_por_id
 
-def create(nome, descricao, data, conteudo):
-    tarefa = [{'Nome': nome, 'Descrição': descricao, 'Data': data, 'conteudo': conteudo}] # cria uma lista de dicionários
+def create(nome, descricao, data, concluido):
+    tarefa = [{'nome': nome, 'descricao': descricao, 'data': data, 'concluido': concluido}] # cria uma lista de dicionários
     escrever_csv(tarefa) # escreve uma lista de dicionários
 
 
