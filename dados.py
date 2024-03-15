@@ -47,6 +47,9 @@ def atribuir_ids_auto_incrementais(dados):
         if 'id' not in item:
             max_id += 1
             item['id'] = str(max_id)
+   
+
+    
 
 def escrever_csv(dados):
     """

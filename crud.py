@@ -1,19 +1,22 @@
-import dados
-def create(nome, descricao, data):
-    tarefa = [{nome: nome, descricao: descricao, data: data}]
-    #dados.escrever_csv(tarefa)
+from dados import ler_csv, escrever_csv, remover_elemento_por_id
+
+def create(nome, descricao, data, conteudo):
+    tarefa = [{'Nome': nome, 'Descrição': descricao, 'Data': data, 'conteudo': conteudo}] # cria uma lista de dicionários
+    escrever_csv(tarefa) # escreve uma lista de dicionários
 
 
-def update (id, nome, descricao, data):
-    tarefa = dados.ler_csv(id,nome,descricao,data)
-    tarefa['nome']= nome
-    tarefa['descricao']= descricao
-    tarefa['data']= data
-    #dados.escrever_csv(tarefa)
+def update (id, nome, descricao, data, conteudo):
+    tarefa = ler_csv()[id]
+    tarefa['nome'] = nome
+    tarefa['descricao'] = descricao
+    tarefa['data'] = data
+    tarefa['conteudo'] = conteudo
     
+    
+def delete(id):
+    remover_elemento_por_id(id)
 
-#def delete(id):
-#verificar com o time 2 como será feita a exclusão
-   
-
-
+def listar():
+    tarefas = ler_csv()
+    for tarefa in tarefas:
+        print(tarefa)
