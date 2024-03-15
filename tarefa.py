@@ -35,14 +35,17 @@ def tarefaDisplay(window, id, nome, descricao, data, concluido):
     descricaoTexto = Label(div, bg="white", text=f"{descricao}", font=("Arial", 10, "normal"), anchor="w")
     descricaoTexto.grid(row=1, column=1, sticky="w", padx=30)
 
-    dataTexto = Label(div, bg="white", text=f"{dataFormatada}", font=("Arial", 10, "normal"), anchor="e")
-    dataTexto.grid(row=0, column=2, rowspan=2, sticky="e")
+    dataTexto = Label(div, bg="white", text=f"{dataFormatada}", font=("Arial", 10, "normal"))
+    dataTexto.grid(row=0, column=2, rowspan=2)
 
-    editar = Button(div, text="Editar", bg="#ddcf47", fg="white", font=("Arial", 10, "bold"), command=abrir_editar)
-    editar.grid(row=0, column=3, rowspan=2, sticky="e")
+    aside = Frame(div, bg="white")
+    aside.grid(row=0, column=3, rowspan=2)
 
-    deletar = Button(div, text="X", bg="red", fg="white", font=("Arial", 10, "bold"), command=deletar)
-    deletar.grid(row=0, column=4, rowspan=2, sticky="e")
+    editarBtn = Button(aside, text="Editar", bg="#ddcf47", fg="white", pady=5, padx=10, border=0, font=("Arial", 10, "bold"), command=abrir_editar)
+    editarBtn.grid(row=0, column=0, padx=(50, 5))
+
+    deletarBtn = Button(aside, text="X", bg="red", fg="white", pady=5, padx=10, border=0, font=("Arial", 10, "bold"), command=deletar)
+    deletarBtn.grid(row=0, column=1)
 
     if (concluido):
         var.set(1)
