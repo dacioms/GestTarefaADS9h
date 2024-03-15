@@ -1,22 +1,19 @@
-from datetime import datetime
-
-def isDateValid(data):
-    try:
-        data = datetime.strptime(data, '%d-%m-%Y')
-        return True
-    except ValueError:
-        return False
+import dados
+def create(nome, descricao, data):
+    tarefa = [{nome: nome, descricao: descricao, data: data}]
+    #dados.escrever_csv(tarefa)
 
 
+def update (id, nome, descricao, data):
+    tarefa = dados.ler_csv(id,nome,descricao,data)
+    tarefa['nome']= nome
+    tarefa['descricao']= descricao
+    tarefa['data']= data
+    #dados.escrever_csv(tarefa)
+    
+
+#def delete(id):
+#verificar com o time 2 como será feita a exclusão
+   
 
 
-data = input('Informe a data de término da terefa: ')
-print(isDateValid(data))
-
-
-def isDateValid(data):
-    try:
-        data = datetime.strptime(data, '%d-%m-%Y')
-        return True
-    except ValueError:
-        return False
