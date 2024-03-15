@@ -10,12 +10,17 @@ def ler_csv():
     Returns:
         list: Uma lista de dicionários representando os dados do arquivo CSV.
     """
-    lista_objetos = []
-    with open(arquivo_saida, newline='') as arquivo_csv:
-        leitor = csv.DictReader(arquivo_csv)
-        for linha in leitor:
-            lista_objetos.append(linha)
-    return lista_objetos
+    try:
+        with open(nome_arquivo, 'r', newline='') as arquivo_csv:
+            leitor_csv = csv.reader(arquivo_csv)
+            linhas = [linha for linha in leitor_csv]
+        return linhas
+    except FileNotFoundError:
+        print("O arquivo não foi encontrado.")
+        return []
+    except Exception as e:
+        print("Ocorreu um erro ao ler o arquivo:", e)
+        return []
 
 def verificar_arquivo():
     """
