@@ -11,7 +11,7 @@ def ler_csv():
         list: Uma lista de dicionários representando os dados do arquivo CSV.
     """
     try:
-        with open(nome_arquivo, 'r', newline='') as arquivo_csv:
+        with open(arquivo_saida, 'r', newline='') as arquivo_csv:
             leitor_csv = csv.reader(arquivo_csv)
             linhas = [linha for linha in leitor_csv]
         return linhas
