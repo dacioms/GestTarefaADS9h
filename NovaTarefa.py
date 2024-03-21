@@ -3,6 +3,7 @@ from Utils import definirTamanhoTela
 from tkcalendar import DateEntry
 from locale import setlocale, LC_ALL
 import datetime
+from crud import *
         
 add_janela = None
 
@@ -14,6 +15,7 @@ def abrir_nova_janela(id = -1, nome = "", descricao = "", data = ""):
         add_janela.lift()
     else:
         def enviar():
+            create(campo_nome,campo_descricao, campo_data)
             # if (id == -1):
                 # crud.create({ "nome": campo_nome.get(), "descricao": campo_descricao.get(), "data": campo_data.get_date(), "concluido": True })
             # else:
