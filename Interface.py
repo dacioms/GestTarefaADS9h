@@ -56,9 +56,9 @@ header = Frame(window)
 header.pack(fill=X, padx=10, pady=10)
 
 add = Button(header, text="Adicionar tarefa", bg="#6aa84f", bd=0, pady=8, padx=15, fg="white", font=("Arial", 10, "bold"), command=abrir_nova_janela)
-add.pack(side=RIGHT)
+add.pack(side=RIGHT, padx=(5, 0))
 
-mostrar = Button(header, text="Mostrar concluídos", bg="#dddddd", bd=0, pady=8, padx=15, fg="#a5a5a5", font=("Arial", 10, "bold"), command=mudarTarefas)
+mostrar = Button(header, text="Mostrar concluídos", bg="#dddddd", bd=0, pady=8, padx=15, fg="#747474", font=("Arial", 10, "bold"), command=mudarTarefas)
 mostrar.pack(side=RIGHT)
 
 container = Frame(window)
